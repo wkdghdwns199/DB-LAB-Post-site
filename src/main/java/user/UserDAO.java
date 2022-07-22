@@ -23,7 +23,7 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
-
+ 
     //로그인 영역
     public int login(String userID, String userPassword){
         String sql = "select userPassword from user where userID = ?";
