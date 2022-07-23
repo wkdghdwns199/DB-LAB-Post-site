@@ -91,7 +91,7 @@
                                 <div class ="form-group">
                                     <input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="20">
                                 </div>
-                                    <input type="submit" class="btn btn-primary form-control" value="로그인">
+                                    <input type="submit" class="btn btn-primary form-control" value="회원가입">
                             </form>
                         </div>
                 </div>
