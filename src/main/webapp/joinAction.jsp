@@ -54,6 +54,7 @@
 			
 			
 			if (result==-1){
+            	session.setAttribute("userID", user.getUserID());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('이미 존재하는 아이디입니다')");
