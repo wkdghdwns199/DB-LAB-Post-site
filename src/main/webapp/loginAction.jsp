@@ -16,10 +16,28 @@
 
     <body>
         <%
-            UserDAO userDAO = new UserDAO();
+            //현재 세션 상태를 체크한다
+            String userID = null;
+        	if (session.getAttribute("userID") != null){
+        		userID = (String)session.getAttribute("userID");
+        	}
+        	
+        	//이미 로그인했으면 다시 로그인을 할 수 없게 한다.
+        	if (userID!= null){
+        		PrintWriter script = response.getWriter();
+                script.println("<script>");
+                script.println("alert('이미 로그인이 되어 있습니다')");
+                script.println("location.href='main.jsp'");
+                script.println("</script>");
+        	}
+        
+        	UserDAO userDAO = new UserDAO();
             int result = userDAO.login(user.getUserID(), user.getUserPassword());
 
             if(result == 1){
+            	
+            	
+            	
                 PrintWriter script = response.getWriter();
 
                 script.println("<script>");
