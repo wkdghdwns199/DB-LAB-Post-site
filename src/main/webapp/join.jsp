@@ -83,7 +83,7 @@
                                 		<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
                                  	</label>
                                  	<label class = "btn btn-primary active">
-                                		<input type="radio" name="userGender" autocomplete="off" value="여자" checked>남자
+                                		<input type="radio" name="userGender" autocomplete="off" value="여자" checked>여자
                                  	</label>
                                 </div>
                                 </div>
