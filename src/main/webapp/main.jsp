@@ -37,7 +37,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="main.jsp">메인</a><li>
-				<li><a href="bbs.jsp">개시판</a><li>
+				<li><a href="bbs.jsp">게시판</a><li>
 			</ul>
 			<%
 				//로그인 하지 않았을 때 보여지는 화면
@@ -51,7 +51,7 @@
 					<!-- 드랍다운 아이템 영역 -->
 					<ul class="dropdown-menu">
 						<li><a href="login.jsp">로그인</a></li>
-						<li><a href="login.jsp">회원가입</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
 					</ul>
 					</li>
 			</ul>
@@ -67,7 +67,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">회원관리<span class="caret"></span></a>
 					<!-- 드랍다운 아이템 영역-->
 					<ul class="dropdown-menu">
-						<li><a href="logoutAction.jsp">로그아웃</a>
+						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
 				</li>
 			</ul>
