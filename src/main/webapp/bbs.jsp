@@ -14,6 +14,12 @@
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>JSP 게시판 웹 사이트</title>
+<style type="text/css">
+	a, a:hover{
+		color : #000000;
+		text-decoration : none;
+	}
+</style>
 </head>
 <body>
 	<%
@@ -23,7 +29,17 @@
 			userID = (String)session.getAttribute("userID");
 		}
 		
+		int pageNumber=1; //기본은 1페이지를 할당
+		//만약 파라미터로 넘어온 오브젝트 타입 'pageNumber'가 존재한다면 
+		//'int'타입으로 캐스팅을 해주고 그 값을 'pageNumber'변수에 저장한다.
+		
+		if (request.getParameter("pageNumber") != null){
+			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+		}
+		
+		
 	%>
+	
 	<nav class="navbar navbar-default"> <!--네비게이션--> 
 		<div class="navbar-header"> <!-- 네비게이션 상단 부분 -->
 			<button type ="button" class ="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -114,7 +130,7 @@
 						<!-- 게시글 제목을 누르면 해당 글을 볼 수 있도록 링크를 걸어둔다 -->
 						<td><a href="view.jsp?bbsID=<%= list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle() %></a></td>
 						<td><%= list.get(i).getUserID() %></td>
-						<td><%= list.get(i).getBbsDate().subString(0,11) + list.get(i).getBbsDate().subString(11,13)+"시" + list.get(i).getBbsDate()/subString(14,16)+"분" %></td>
+						<td><%= list.get(i).getBbsDate().substring(0,11) + list.get(i).getBbsDate().substring(11,13)+"시" + list.get(i).getBbsDate().substring(14,16)+"분" %></td>
 					</tr>
 					<%
 							}
