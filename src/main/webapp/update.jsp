@@ -33,6 +33,7 @@
 		}
 		
 		int bbsID =0;
+		
 		if (request.getParameter("bbsID")!= null){
 			bbsID = Integer.parseInt(request.getParameter("bbsID"));
 		}
@@ -130,12 +131,12 @@
 					<tbody>
 						<tr>
 							<td>
-								<input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50">
+								<input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" value="<%=bbs.getBbsTitle() %>" maxlength="50">
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height :350px;"></textarea>
+								<textarea class="form-control" placeholder="글 내용" name="bbsContent"  maxlength="2048" style="height :350px;"><%=bbs.getBbsContent() %></textarea>
 							</td>
 						</tr>
 					</tbody>

@@ -149,12 +149,14 @@ public class BbsDAO {
 	
 	//게시글 수정 메소드
 	public int update(int bbsID, String bbsTitle, String bbsContent) {
-		String sql = "update bbs set bbsTitle = ?, bbsContent =? where bbsID = ?";
+		String sql = "update bbs set bbsTitle = ?, bbsContent = ? where bbsID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, bbsTitle);
 			pstmt.setString(2, bbsContent);
 			pstmt.setInt(3, bbsID);
+			
+			return pstmt.executeUpdate();
 		}catch (Exception e){
 			e.printStackTrace();
 		}
