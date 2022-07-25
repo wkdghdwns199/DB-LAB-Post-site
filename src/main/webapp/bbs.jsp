@@ -114,7 +114,7 @@
 						<!-- 게시글 제목을 누르면 해당 글을 볼 수 있도록 링크를 걸어둔다 -->
 						<td><a href="view.jsp?bbsID=<%= list.get(i).getBbsID() %>"><%= list.get(i).getBbsTitle() %></a></td>
 						<td><%= list.get(i).getUserID() %></td>
-						<td><%= list.get(i).getBbsDate().subString(0,11) + list.get(i).getBbsDate().subString(11,13)+"시" + list.get(i).getBbsDate()/subString(14,16)+"분" %></td>
+						<td><%= list.get(i).getBbsDate().substring(0,11) + list.get(i).getBbsDate().substring(11,13)+"시" + list.get(i).getBbsDate()/substring(14,16)+"분" %></td>
 					</tr>
 					<%
 							}
