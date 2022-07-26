@@ -9,7 +9,9 @@
 
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
-<title>JSP 게시판 웹 사이트</title>
+<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
+<link rel="stylesheet" href="css/custom.css">
+<title>DB NAS</title>
 </head>
 <body>
 	<%
@@ -30,7 +32,7 @@
 			</button>
 			
 			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
+			<a class="navbar-brand" href="main.jsp">DB NAS</a>
 		</div>
 		
 		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역-->
@@ -77,6 +79,55 @@
 		</div>
 		
 	</nav>
+	
+	<!-- 메인 페이지 영역 시작 -->
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>DB NAS WEB PAGE</h1>
+				<br>
+				<h2>Database Lab<br>Be your best</h2>
+				<p><br>경성대학교 DB 연구실 자료를 위해 제작된 <br>DB NAS 서버 홈페이지입니다.</p>
+				<a class="btn btn-primary btn-pull" href="#labActivityArea" role="button">LAB ACTIVITY</a>
+				
+			</div>
+		</div>
+	</div>
+	<!--  메인 페이지 영역 끝 -->
+	
+	<!-- 메인 페이지 이미지 삽입 영역 -->
+	<div id="labActivityArea" class="container">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1" ></li>
+				<li data-target="#myCarousel" data-slide-to="2" ></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="images/1.jpg">
+				</div>
+				<div class="item">
+					<img src="images/2.jpg">
+				</div>
+				<div class="item">
+					<img src="images/3.jpg">
+				</div>
+				
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class ="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class ="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+	
+	<!-- 메인 페이지 영역 끝 -->
+	
+	<!--  하단 공간 시작-->
+	<div class="page-header">
+	</div>
+	<!-- 하단 공간 끝 -->
 	
 	<!--부트스트랩 참조 영역-->
         <script src ="https://code.jquery.com/jquery-3.1.1.min.js"></script>
