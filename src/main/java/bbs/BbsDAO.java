@@ -86,7 +86,7 @@ public class BbsDAO {
 		ArrayList<Bbs> list = new ArrayList<Bbs>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,getNext() - (pageNumber -1) * 10);
+			pstmt.setInt(1,getNext()-(pageNumber -1) * 10);
 			rs=pstmt.executeQuery();
 			while (rs.next()) {
 				Bbs bbs = new Bbs();
@@ -107,12 +107,28 @@ public class BbsDAO {
 	
 	//페이징 처리 메소드
 	public boolean nextPage(int pageNumber) {
+		//String pageSetCalsql = "select count(*) from bbs where bbsAvailable=0";
+		String prevPageContentCntsql = "select * from bbs where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";
 		String sql = "select * from bbs where bbsID < ? and bbsAvailable = 1";
 		
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(prevPageContentCntsql);
+			
+			pstmt.setInt(1, getNext() - (pageNumber -2) *10);
+			rs = pstmt.executeQuery();
+			int prevPageContentCnt=0;
+			while (rs.next()) {
+				prevPageContentCnt++;
+			}
+			if (prevPageContentCnt!=10){
+				return false;
+			}
+
+			pstmt = conn.prepareStatement(sql);
+			
 			pstmt.setInt(1, getNext() - (pageNumber -1) *10);
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()) {
 				return true;
 			}
@@ -120,6 +136,7 @@ public class BbsDAO {
 			e.printStackTrace();
 		}
 		return false;
+		
 	}
 	
 	//하나의 게시글을 보는 메소드
